@@ -1,7 +1,9 @@
 # 📊 Progresso do Desenvolvimento - Sistema de Orçamento Le Cortine
 
 **Autor:** Rafael Dias - [doisr.com.br](https://doisr.com.br)  
-**Última Atualização:** 13/11/2024 17:55
+**Última Atualização:** 13/11/2024 19:00  
+**Versão Atual:** v1.0.0  
+**Repositório:** https://github.com/doisrsis/orcamento_lecortine
 
 ---
 
