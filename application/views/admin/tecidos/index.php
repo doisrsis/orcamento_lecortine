@@ -119,10 +119,10 @@
                             
                             <div class="mb-3">
                                 <div class="row g-2">
-                                    <?php if ($tecido->largura): ?>
+                                    <?php if (isset($tecido->largura_padrao) && $tecido->largura_padrao): ?>
                                     <div class="col-6">
                                         <small class="text-secondary">
-                                            <i class="ti ti-ruler"></i> <?= $tecido->largura ?>cm
+                                            <i class="ti ti-ruler"></i> <?= $tecido->largura_padrao ?>cm
                                         </small>
                                     </div>
                                     <?php endif; ?>

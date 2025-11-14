@@ -170,6 +170,44 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.2.0] - 2024-11-13
+
+### 🎨 Adicionado
+
+**Formulário Público Multi-step:**
+- Controller `Orcamento` completo com 6 etapas
+- Layout público moderno e responsivo
+- Etapa 1: Dados do cliente com validação
+- Etapa 2: Seleção visual de produtos
+- Etapa 3: Escolha de tecido e cor (AJAX)
+- Etapa 4: Dimensões com controles intuitivos
+- Etapa 5: Seleção de extras opcionais
+- Etapa 6: Resumo completo do orçamento
+- Página de sucesso com número do orçamento
+- Barra de progresso visual
+- Navegação entre etapas
+- Armazenamento em sessão
+- Máscaras de telefone/WhatsApp
+- Integração com Models existentes
+- Salvamento automático no banco
+- Design gradient moderno
+- Totalmente responsivo (PC/Tablet/Mobile)
+
+**Melhorias:**
+- Rotas configuradas para formulário público
+- CSS customizado com variáveis
+- Animações e transições suaves
+- SweetAlert2 para feedbacks
+- jQuery Mask para máscaras
+
+### 📊 Estatísticas
+
+- **Controllers:** 9 (+ Orcamento público)
+- **Views Públicas:** 9 (layout + 7 etapas)
+- **Progresso Geral:** ~85%
+
+---
+
 ## [Unreleased]
 
 ### 🚀 Próximas Funcionalidades

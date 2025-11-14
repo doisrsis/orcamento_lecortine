@@ -341,4 +341,66 @@ class Orcamento_model extends CI_Model {
             'data_envio_email' => date('Y-m-d H:i:s')
         ]);
     }
+
+    /**
+     * Listar orçamentos com dados do cliente (para admin)
+     */
+    public function get_all_with_cliente($limit = null, $offset = 0, $filtros = []) {
+        $this->db->select('orcamentos.*, clientes.nome as cliente_nome, clientes.email as cliente_email, clientes.whatsapp as cliente_whatsapp');
+        $this->db->from($this->table);
+        $this->db->join('clientes', 'clientes.id = orcamentos.cliente_id', 'left');
+        
+        // Aplicar filtros
+        if (isset($filtros['status']) && !empty($filtros['status'])) {
+            $this->db->where('orcamentos.status', $filtros['status']);
+        }
+        
+        if (isset($filtros['busca']) && !empty($filtros['busca'])) {
+            $this->db->group_start();
+            $this->db->like('orcamentos.numero', $filtros['busca']);
+            $this->db->or_like('clientes.nome', $filtros['busca']);
+            $this->db->or_like('clientes.email', $filtros['busca']);
+            $this->db->group_end();
+        }
+        
+        if (isset($filtros['data_inicio']) && !empty($filtros['data_inicio'])) {
+            $this->db->where('DATE(orcamentos.criado_em) >=', $filtros['data_inicio']);
+        }
+        
+        if (isset($filtros['data_fim']) && !empty($filtros['data_fim'])) {
+            $this->db->where('DATE(orcamentos.criado_em) <=', $filtros['data_fim']);
+        }
+        
+        $this->db->order_by('orcamentos.criado_em', 'DESC');
+        
+        if ($limit) {
+            $this->db->limit($limit, $offset);
+        }
+        
+        return $this->db->get()->result();
+    }
+
+    /**
+     * Contar todos os orçamentos
+     */
+    public function count_all() {
+        return $this->db->count_all($this->table);
+    }
+
+    /**
+     * Contar orçamentos por status
+     */
+    public function count_by_status($status) {
+        $this->db->where('status', $status);
+        return $this->db->count_all_results($this->table);
+    }
+
+    /**
+     * Somar valor total de todos os orçamentos
+     */
+    public function sum_valor_total() {
+        $this->db->select_sum('valor_final');
+        $result = $this->db->get($this->table)->row();
+        return $result->valor_final ?? 0;
+    }
 }

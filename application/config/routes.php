@@ -53,11 +53,20 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
-// Rotas públicas
+// Rotas públicas - Formulário de Orçamento
 $route['orcamento'] = 'orcamento/index';
-$route['orcamento/criar'] = 'orcamento/criar';
-$route['orcamento/salvar'] = 'orcamento/salvar';
-$route['orcamento/sucesso/(:any)'] = 'orcamento/sucesso/$1';
+$route['orcamento/etapa1'] = 'orcamento/etapa1';
+$route['orcamento/etapa2'] = 'orcamento/etapa2';
+$route['orcamento/etapa3'] = 'orcamento/etapa3';
+$route['orcamento/etapa4'] = 'orcamento/etapa4';
+$route['orcamento/etapa5'] = 'orcamento/etapa5';
+$route['orcamento/etapa6'] = 'orcamento/etapa6';
+$route['orcamento/etapa7'] = 'orcamento/etapa7';
+$route['orcamento/etapa8'] = 'orcamento/etapa8';
+$route['orcamento/resumo'] = 'orcamento/resumo';
+$route['orcamento/consultoria'] = 'orcamento/consultoria';
+$route['orcamento/sucesso'] = 'orcamento/sucesso';
+$route['orcamento/ajax_cores/(:num)'] = 'orcamento/ajax_cores/$1';
 
 // Rotas de autenticação
 $route['login'] = 'auth/login';
@@ -71,6 +80,7 @@ $route['admin/categorias'] = 'admin/categorias';
 $route['admin/produtos'] = 'admin/produtos';
 $route['admin/colecoes'] = 'admin/colecoes';
 $route['admin/tecidos'] = 'admin/tecidos';
+$route['admin/extras'] = 'admin/extras';
 $route['admin/precos'] = 'admin/precos';
 $route['admin/orcamentos'] = 'admin/orcamentos';
 $route['admin/configuracoes'] = 'admin/configuracoes';

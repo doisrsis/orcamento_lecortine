@@ -147,4 +147,15 @@ class Preco_model extends CI_Model {
         return $this->db->count_all_results();
     }
 
+    /**
+     * Buscar preço por m² de um produto (Rolô/Duplex)
+     * Para Rolô e Duplex, o preço é único por produto
+     */
+    public function get_preco_tecido($produto_id, $tecido_id = null) {
+        $this->db->where('produto_id', $produto_id);
+        $preco = $this->db->get($this->table)->row();
+        
+        return $preco ? $preco->preco_m2 : 0;
+    }
+
 }

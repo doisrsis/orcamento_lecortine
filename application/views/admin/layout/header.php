@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title><?= $titulo ?? 'Admin - Le Cortine' ?></title>
-    
+
     <!-- CSS files -->
     <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet"/>
-    
+
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/css/admin.css') ?>" rel="stylesheet"/>
-    
+
     <style>
         @import url('https://rsms.me/inter/inter.css');
         :root {
@@ -55,7 +55,7 @@
                 </button>
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <a href="<?= base_url('admin') ?>">
-                        <img src="<?= base_url('assets/img/logo.svg') ?>" width="110" height="32" alt="Le Cortine" class="navbar-brand-image">
+                        <img src="<?= base_url('assets/img/logo.png') ?>" width="110" height="32" alt="Le Cortine" class="navbar-brand-image">
                     </a>
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Perfil do usuário -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Abrir menu do usuário">
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </header>
-        
+
         <!-- Menu Horizontal -->
         <header class="navbar-expand-md">
             <div class="collapse navbar-collapse" id="navbar-menu">
@@ -127,7 +127,7 @@
                                     <span class="nav-link-title">Dashboard</span>
                                 </a>
                             </li>
-                            
+
                             <li class="nav-item dropdown <?= in_array($menu_ativo, ['categorias', 'produtos', 'colecoes', 'tecidos']) ? 'active' : '' ?>">
                                 <a class="nav-link dropdown-toggle" href="#navbar-produtos" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -150,7 +150,7 @@
                                     </a>
                                 </div>
                             </li>
-                            
+
                             <li class="nav-item <?= $menu_ativo == 'extras' ? 'active' : '' ?>">
                                 <a class="nav-link" href="<?= base_url('admin/extras') ?>">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -159,7 +159,7 @@
                                     <span class="nav-link-title">Extras</span>
                                 </a>
                             </li>
-                            
+
                             <li class="nav-item <?= $menu_ativo == 'precos' ? 'active' : '' ?>">
                                 <a class="nav-link" href="<?= base_url('admin/precos') ?>">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -168,7 +168,7 @@
                                     <span class="nav-link-title">Preços</span>
                                 </a>
                             </li>
-                            
+
                             <li class="nav-item <?= $menu_ativo == 'orcamentos' ? 'active' : '' ?>">
                                 <a class="nav-link" href="<?= base_url('admin/orcamentos') ?>">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -177,7 +177,7 @@
                                     <span class="nav-link-title">Orçamentos</span>
                                 </a>
                             </li>
-                            
+
                             <li class="nav-item <?= $menu_ativo == 'clientes' ? 'active' : '' ?>">
                                 <a class="nav-link" href="<?= base_url('admin/clientes') ?>">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -186,7 +186,7 @@
                                     <span class="nav-link-title">Clientes</span>
                                 </a>
                             </li>
-                            
+
                             <?php if ($usuario_logado->nivel == 'admin'): ?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#navbar-sistema" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
@@ -213,5 +213,5 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="page-wrapper">
